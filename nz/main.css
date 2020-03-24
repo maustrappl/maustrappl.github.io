@@ -24,7 +24,7 @@ header p {
 }
 
 header nav img {
-    border-radius: 50%;
+    border-radius: 50%; 
 }
 
 a:link,
@@ -40,4 +40,7 @@ header nav address {
 main {
     max-width: 70%;
     margin: auto;
+}
+main p {
+    text-align: justify;
 }
