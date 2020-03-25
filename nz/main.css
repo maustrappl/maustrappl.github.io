@@ -70,6 +70,10 @@ footer {
     padding: 1em 0 3em 0;
 }
 
-footer .back {
+footer .Dunedin {
     float: left;
+}
+
+footer .Milford Sound {
+    float: right;
 }
