@@ -44,5 +44,15 @@ let user = {
 console.log(user);
 console.log(user.fistname);
 user.highscore = 200;
+user["highscore ever"] = 400
 console.log(user);
+
+let a = 2;
+let b = 4;
+console.log(a+b);
+console.log(a/(a-1));
+a++;
+console.log(a);
+
+
 
