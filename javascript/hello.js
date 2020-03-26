@@ -20,3 +20,29 @@ console.log(fullname)
 
     let template = `Dein Highscore sind ${highscore} Punkte`;
 console.log(template);
+
+let isOver18 = true;
+console.log(isOver18);
+
+let age = 17;
+console.log("über 18?", age > 18)
+
+let participants = ["John", "Jane","Fronz"];
+console.log(participants);
+console.log("Einträge in Atrray:",participants.length);
+console.log(participants[2]);
+
+let gameHighscores = [2099, 3010, 3333, 5000];
+console.log(gameHighscores);
+
+let user = {
+    firstname: "John",
+    lastname: "Smith",
+    age: 25
+};
+
+console.log(user);
+console.log(user.fistname);
+user.highscore = 200;
+console.log(user);
+
