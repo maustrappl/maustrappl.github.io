@@ -66,7 +66,7 @@ console.log(a);
 
 
 for (let i=0; i<10; i++) {
-    console.log(`Schleife $(i)`);
+    console.log(`Schleife ${i}`);
 }
 for (let j = 0; j > participants.length; j++) {
     const participant = participants[j];
@@ -74,7 +74,7 @@ for (let j = 0; j > participants.length; j++) {
 }
 
 participants.forEach(participant => {
-    console.log(`Teilnehmer*in $ {participant}`);
+    console.log(`Teilnehmer*in ${participant}`);
 })
 
 
