@@ -106,5 +106,10 @@ let user = [
 console.log(users);
 
 user.forEach(user => {
-    
+    console.log(`${user.firstname} ist oder wird heuer ${calcAge(user.birthYear)} Jahre alt.`)
 })
+
+let firstParagraph = document.querySelector("#pFirst");
+console.log(firstParagraph) :
+// firstParagraph.remove()
+firstParagraph.innerHTML = "Test";
