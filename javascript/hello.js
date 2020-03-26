@@ -84,3 +84,27 @@ function showAge(birthYear) {
 
 showAge(1964);
 showAge(1977);
+
+function calcAge(birthYear) {
+    return 2020 - birthYear;
+}
+console.log(`Max ist ${calcAge(1977)} Jahre alt (ca.) `);
+console.log(`john ist ${calcAge(1988)} Jahre alt (ca.)`);
+
+let birthYears.array.forEach(year => {
+    console.log(`Geboren ${year}, heute ca. ${calcAge(year)} Jahre alt.`);
+    
+});
+
+
+let user = [
+    {firstname: "John", lastname: "Smith",birthYear: 1960},
+    {firstname: "Jane", lastname: "Doe",birthYear: 1970},
+    {firstname: "Max", lastname: "Mustermann",birthYear: 1990},
+];
+
+console.log(users);
+
+user.forEach(user => {
+    
+})
