@@ -18,5 +18,5 @@ console.log("Name", firstname, lastname);
 let fullname = 'Jeffrey" "the Dude" Lebowski';
 console.log(fullname)
 
-let template = `Dein Highscore sind ${highscore} Punkte´;
+    let template = `Dein Highscore sind ${highscore} Punkte`;
 console.log(template);
