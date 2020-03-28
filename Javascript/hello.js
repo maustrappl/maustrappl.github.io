@@ -139,6 +139,6 @@ indetedParas.forEach((para, index) => {
     if ( index % 2 == 0) {
         para.style.color = "red";
     } else {
-        para.style.color = "blue";
+        para.style.color = "cyan";
     }
 });
