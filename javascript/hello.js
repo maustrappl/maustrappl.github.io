@@ -8,8 +8,12 @@
 const LINK_COLOR = "#ff0000"
 console.log("link bitte in der Farbe", LINK_COLOR);
 
-let highscore = 520533;
+// numerische Varariable
+
+let highscore = 520233;
 console.log(highscore / 10);
+
+// zeichenkette/Strings
 
 let firstname = "John"
 let lastname = "Smith"
@@ -18,7 +22,7 @@ console.log("Name", firstname, lastname);
 let fullname = 'Jeffrey" "the Dude" Lebowski';
 console.log(fullname)
 
-    let template = `Dein Highscore sind ${highscore} Punkte`;
+let template = `Dein Highscore sind ${highscore} Punkte`;
 console.log(template);
 
 let isOver18 = true;
