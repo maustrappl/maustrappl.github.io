@@ -5,21 +5,21 @@
 // message = "Hallo Welt";
 // alert(message);
 
-const LINK_COLOR = "#ff0000"
-console.log("link bitte in der Farbe", LINK_COLOR);
+const LINK_COLOR = "#ff0000";
+console.log("Link bitte in der Farbe ", LINK_COLOR);
 
-// numerische Varariable
+// numerische Variable
 
 let highscore = 520233;
 console.log(highscore / 10);
 
-// zeichenkette/Strings
+// Zeichenketten/Strings
 
 let firstname = "John";
-let lastname = "Smith";
-console.log("Name", firstname, lastname);
+let lastname = 'Smith';
+console.log("Name: ", firstname, lastname);
 
-let fullname = 'Jeffrey" "the Dude" Lebowski';
+let fullname = 'Jeffrey "The Dude" Lebowski';
 console.log(fullname);
 
 let template = `Dein Highscore sind ${highscore} Punkte`;
@@ -31,14 +31,14 @@ console.log(isOver18);
 let age = 19;
 console.log("über 18?", age > 18);
 
-// Array/Listen
+// Arrays/Listen
 
-let participants = ["John", "Jane","Max"];
+let participants = [ "John", "Jane", "Max" ];
 console.log(participants);
-console.log("Einträge in Atrray:",participants.length);
+console.log("Einträge im Array: ", participants.length);
 console.log(participants[2]);
 
-let gameHighscores = [2099, 3010, 3333, 5000];
+let gameHighscores = [2099, 3010, 3333, 5000 ];
 console.log(gameHighscores);
 
 // Objekte
@@ -50,7 +50,7 @@ let user = {
 };
 
 console.log(user);
-console.log(user.fistname);
+console.log(user.firstname);
 user.highscore = 200;
 user["highscore ever"] = 400;
 console.log(user);
@@ -58,23 +58,23 @@ console.log(user);
 let a = 2;
 let b = 4;
 console.log(a+b);
-console.log(a/(a-1));
+console.log(b/(a-1));
 a++;
 console.log(a);
 
 // if-Abfrage
 
-// let myAge = promt("wie alt bist du?");
-// console.log(`Du bist ${myAge} Jahre alt`);
+// let myAge = prompt("Wie alt bist du?");
+// console.log(`Du bist ${myAge} Jahre alt.`);
 // console.log(`über 18? ${myAge > 18}`);
 
 // if (myAge > 18) {
-//     console.log("Glückwundch über 18");
+//     console.log("Glückwunsch über 18");
 // } else {
 //     console.log("Leider unter 18");
 // }
 
-// Schleifen: For Schleife
+// Schleifen: for Schleife
 
 for (let i=0; i<10; i++) {
     console.log(`Schleife ${i}`);
@@ -82,7 +82,7 @@ for (let i=0; i<10; i++) {
 
 for (let j = 0; j < participants.length; j++) {
     const participant = participants[j];
-    console.log(`Teilnehmer*in ${j} ${participants}`);
+    console.log(`Teilnehmer*in ${j} ${participant}`);
 }
 
 participants.forEach(participant => {
@@ -102,42 +102,43 @@ function calcAge(birthYear) {
     return 2020 - birthYear;
 }
 
-console.log(`Max ist ${calcAge(1977)} Jahre alt (ca.) `);
-console.log(`john ist ${calcAge(1988)} Jahre alt (ca.)`);
+console.log(`Max ist ${calcAge(1977)} Jahre alt (ca.)`);
+console.log(`John ist ${calcAge(1988)} Jahre alt (ca.)`);
 
-let birthYears = [1964, 1977, 1980, 2001, 2004]
-    console.log(birthYears);
-    
+let birthYears = [ 1964, 1977, 1980, 2001, 2004 ];
+console.log(birthYears);
+
 birthYears.forEach(year => {
-    console.log(`Geboren ${year}, ehute ca. ${calcAge(year)} Jahre alt`);
+    console.log(`Geboren ${year}, heute ca. ${calcAge(year)} Jahre alt.`);
 });
 
-let user = [
-    {firstname: "John", lastname: "Smith",birthYear: 1960},
-    {firstname: "Jane", lastname: "Doe",birthYear: 1970},
-    {firstname: "Max", lastname: "Mustermann",birthYear: 1990},
+let users = [
+    { firstname: "John", lastname: "Smith", birthYear: 1960 },
+    { firstname: "Jane", lastname: "Doe", birthYear: 1970 },
+    { firstname: "Max", lastname: "Mustermann", birthYear: 1990 },
 ];
 
 console.log(users);
 
-user.forEach(user => {
+users.forEach(user => {
     console.log(`${user.firstname} ist oder wird heuer ${calcAge(user.birthYear)} Jahre alt.`);
 });
 
 let firstParagraph = document.querySelector("#pFirst");
 console.log(firstParagraph);
-// firstParagraph.remove()
+// firstParagraph.remove();
 firstParagraph.innerHTML = "Test";
-firstParagraph.innerHTML = "red";
+firstParagraph.style.color = "red";
 
-let indetetParas = document.querySelectorAll(".indent");
-console.log(indetetParas);
-indetetParas.innerHTML ="Test2";
-indetetParas.forEach((para, index) => {
+let indetedParas = document.querySelectorAll(".indent");
+console.log(indetedParas);
+indetedParas.innerHTML = "Test2";
+indetedParas.forEach((para, index) => {
     console.log(`Data attribut LAT ${para.dataset.lat}`);
     para.innerHTML = `Absatz ${index}`;
     if ( index % 2 == 0) {
         para.style.color = "red";
     } else {
         para.style.color = "blue";
+    }
 });
