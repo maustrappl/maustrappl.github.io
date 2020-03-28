@@ -140,4 +140,4 @@ indetetParas.forEach((para, index) => {
         para.style.color = "red";
     } else {
         para.style.color = "blue";
-}));
+});
