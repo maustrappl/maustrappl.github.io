@@ -15,8 +15,8 @@ console.log(highscore / 10);
 
 // zeichenkette/Strings
 
-let firstname = "John"
-let lastname = "Smith"
+let firstname = "John";
+let lastname = "Smith";
 console.log("Name", firstname, lastname);
 
 let fullname = 'Jeffrey" "the Dude" Lebowski';
