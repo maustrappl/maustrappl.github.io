@@ -28,16 +28,20 @@ console.log(template);
 let isOver18 = true;
 console.log(isOver18);
 
-let age = 17;
-console.log("über 18?", age > 18)
+let age = 19;
+console.log("über 18?", age > 18);
 
-let participants = ["John", "Jane","Fronz"];
+// Array/Listen
+
+let participants = ["John", "Jane","Max"];
 console.log(participants);
 console.log("Einträge in Atrray:",participants.length);
 console.log(participants[2]);
 
 let gameHighscores = [2099, 3010, 3333, 5000];
 console.log(gameHighscores);
+
+// Objekte
 
 let user = {
     firstname: "John",
@@ -48,7 +52,7 @@ let user = {
 console.log(user);
 console.log(user.fistname);
 user.highscore = 200;
-user["highscore ever"] = 400
+user["highscore ever"] = 400;
 console.log(user);
 
 let a = 2;
@@ -57,6 +61,8 @@ console.log(a+b);
 console.log(a/(a-1));
 a++;
 console.log(a);
+
+// if-Abfrage
 
 // let myAge = promt("wie alt bist du?");
 // console.log(`Du bist ${myAge} Jahre alt`);
@@ -68,19 +74,22 @@ console.log(a);
 //     console.log("Leider unter 18");
 // }
 
+// Schleifen: For Schleife
 
 for (let i=0; i<10; i++) {
     console.log(`Schleife ${i}`);
 }
-for (let j = 0; j > participants.length; j++) {
+
+for (let j = 0; j < participants.length; j++) {
     const participant = participants[j];
     console.log(`Teilnehmer*in ${j} ${participants}`);
 }
 
 participants.forEach(participant => {
     console.log(`Teilnehmer*in ${participant}`);
-})
+});
 
+// Funktionen
 
 function showAge(birthYear) {
     console.log(`Du bist ca. ${2020 - birthYear} Jahre alt.`);
@@ -92,14 +101,16 @@ showAge(1977);
 function calcAge(birthYear) {
     return 2020 - birthYear;
 }
+
 console.log(`Max ist ${calcAge(1977)} Jahre alt (ca.) `);
 console.log(`john ist ${calcAge(1988)} Jahre alt (ca.)`);
 
-let birthYears.array.forEach(year => {
-    console.log(`Geboren ${year}, heute ca. ${calcAge(year)} Jahre alt.`);
+let birthYears = [1964, 1977, 1980, 2001, 2004]
+    console.log(birthYears);
     
+birthYears.forEach(year => {
+    console.log(`Geboren ${year}, ehute ca. ${calcAge(year)} Jahre alt`);
 });
-
 
 let user = [
     {firstname: "John", lastname: "Smith",birthYear: 1960},
@@ -110,11 +121,11 @@ let user = [
 console.log(users);
 
 user.forEach(user => {
-    console.log(`${user.firstname} ist oder wird heuer ${calcAge(user.birthYear)} Jahre alt.`)
-})
+    console.log(`${user.firstname} ist oder wird heuer ${calcAge(user.birthYear)} Jahre alt.`);
+});
 
 let firstParagraph = document.querySelector("#pFirst");
-console.log(firstParagraph) :
+console.log(firstParagraph);
 // firstParagraph.remove()
 firstParagraph.innerHTML = "Test";
 firstParagraph.innerHTML = "red";
@@ -122,10 +133,11 @@ firstParagraph.innerHTML = "red";
 let indetetParas = document.querySelectorAll(".indent");
 console.log(indetetParas);
 indetetParas.innerHTML ="Test2";
-indetetParas.forEach(para => {
+indetetParas.forEach((para, index) => {
+    console.log(`Data attribut LAT ${para.dataset.lat}`);
     para.innerHTML = `Absatz ${index}`;
     if ( index % 2 == 0) {
         para.style.color = "red";
     } else {
-        para.style.color = "yellow";
-});
+        para.style.color = "blue";
+}));
