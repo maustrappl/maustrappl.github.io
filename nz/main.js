@@ -1,5 +1,5 @@
 //alert("Hallo Welt!")
-let map = document.querySelector("#map")
+let map = document.querySelector("map")
 
 var mymap = L.map('mapid').setView([51.505, -0.09], 13);
 
