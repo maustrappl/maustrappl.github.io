@@ -1,9 +1,9 @@
 //alert("Hallo Welt!")
-let map = document.querySelector("#map")
+let map = document.querySelector("#map");
 let lat = map.dataset.lat;
 
 
-var mymap = L.map('map').setView([51.505, -0.09], 13);
+var mymap = L.map('map').setView(([lat, lng], 13);
 
 L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
     maxZoom: 17,
