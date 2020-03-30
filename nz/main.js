@@ -1,7 +1,7 @@
 //alert("Hallo Welt!")
 let map = document.querySelector("#map") //verbindung zur karte herstellen
 let lat = map.dataset.lat;
-let lat = map.dataset.lng;
+let lng = map.dataset.lng;
 
 var mymap = L.map('map').setView([lat,lng], 13);
 
