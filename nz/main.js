@@ -10,4 +10,4 @@ L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
 
 var marker = L.marker([-45.8909481029, 170.6417191]).addTo(mymap);
 
-marker.bindPopup("<b>Sandfly Bay</b><br>a Department of Conservation wildlife reserve").openPopup();
+marker.bindPopup("<b>Doubtfull Sound</b><br>a D").openPopup();
