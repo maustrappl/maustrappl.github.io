@@ -1,5 +1,5 @@
 //alert("Hallo Welt!")
-let map = document.querySelector("#map");
+let map = document.querySelector("#map")
 let lat = map.dataset.lat;
 
 
