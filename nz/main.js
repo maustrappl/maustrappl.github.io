@@ -3,7 +3,7 @@ let map = document.querySelector("#map")
 let lat = map.dataset.lat;
 let lat = map.dataset.lng;
 
-var mymap = L.map(`map`).steView([lat,lng], 13);
+var mymap = L.map('map').steView([lat,lng], 13);
 
 
 L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
