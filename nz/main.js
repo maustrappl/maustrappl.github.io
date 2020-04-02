@@ -16,4 +16,4 @@ L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
 
 let marker = L.marker([lat, lng]).addTo(mymap);
 
-marker.bindPopup(title).openPopup(); //titel nicht in anführubngszeichen  um in html zu schreiben
+marker.bindPopup(title); //titel nicht in anführubngszeichen  um in html zu schreiben
