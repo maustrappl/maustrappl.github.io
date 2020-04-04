@@ -8,6 +8,7 @@ let map = L.map("map", {
     ]
 });
 
+let circleGroup = L.featureGroup().addTo(map);
 L.control.layers({
     "OpenTopoMap": startLayer,
     "OpenStreetMap.Mapnik": L.tileLayer.provider("OpenStreetMap.Mapnik"),
@@ -16,25 +17,18 @@ L.control.layers({
     "Stamen.Toner": L.tileLayer.provider("Stamen.Toner"),
     "Stamen.TerrainLabels": L.tileLayer.provider("Stamen.TerrainLabels"),
     "Esri.WorldImagery": L.tileLayer.provider("Esri.WorldImagery"),
-
+},{
+    "Thematische Darstellung" : circleGroup
 }).addTo(map);
 
 L.marker([0, 0]).addTo(map);
 
 //console.log(CONFIRMED);
-for (let i = 0; i < CONFIRMED.length; i++) {
+//console.log(CONFIRMED);
+for (let i = 1; i < CONFIRMED.length; i++) {
     let row = CONFIRMED[i];
-
-let reg = `${row[0]} ${row[1]}`;
-let lat = row[2];
-let lng = row[3];
-let val = row[row.lenth-1];
-let mrk = L.marker([lat,lng]).addTo(map);
-mrk.bindPopup(`${reg}: ${val}`);   
-
-
-let circle = L.circleMarker([lat,lng],{
-    radius:(val/2)*0.001
-}).addTo(map;
-    circle.bindPopup(`${reg}: ${val}`);
+    //console.log(row[2],row[3]);
+    let val = row[row.length-1];
+    let mrk = L.marker([row[2],row[3]]).addTo(map);
+    mrk.bindPopup(`${row[0]} ${row[1]}: ${val}`);
 }
