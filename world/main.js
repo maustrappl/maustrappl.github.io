@@ -17,8 +17,8 @@ L.control.layers({
     "Stamen.Toner": L.tileLayer.provider("Stamen.Toner"),
     "Stamen.TerrainLabels": L.tileLayer.provider("Stamen.TerrainLabels"),
     "Esri.WorldImagery": L.tileLayer.provider("Esri.WorldImagery"),
-},{
-    "Thematische Darstellung" : circleGroup
+}, {
+    "Thematische Darstellung": circleGroup
 }).addTo(map);
 
 L.marker([0, 0]).addTo(map);
@@ -28,7 +28,7 @@ L.marker([0, 0]).addTo(map);
 for (let i = 1; i < CONFIRMED.length; i++) {
     let row = CONFIRMED[i];
     //console.log(row[2],row[3]);
-    let val = row[row.length-1];
-    let mrk = L.marker([row[2],row[3]]).addTo(map);
+    let val = row[row.length - 1];
+    let mrk = L.marker([row[2], row[3]]).addTo(map);
     mrk.bindPopup(`${row[0]} ${row[1]}: ${val}`);
 }
