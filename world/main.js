@@ -12,7 +12,6 @@ let circleGroup = L.featureGroup().addTo(map);
 L.control.layers({
     "OpenTopoMap": startLayer,
     "OpenStreetMap.Mapnik": L.tileLayer.provider("OpenStreetMap.Mapnik"),
-    "Thunderforest.SpinalMap": L.tileLayer.provider("Thunderforest.SpinalMap"),
     "NASAGIBS.ModisTerraTrueColorCR": L.tileLayer.provider("NASAGIBS.ModisTerraTrueColorCR"), //http://leaflet-extras.github.io/leaflet-providers/preview/index.html
     "Stamen.Toner": L.tileLayer.provider("Stamen.Toner"),
     "Stamen.TerrainLabels": L.tileLayer.provider("Stamen.TerrainLabels"),
