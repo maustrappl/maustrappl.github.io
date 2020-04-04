@@ -21,14 +21,25 @@ L.control.layers({
     "Thematische Darstellung": circleGroup
 }).addTo(map);
 
-L.marker([0, 0]).addTo(map);
+let drawCircles = function (data) {
+    for (let i = 1; i < data.length; i++) {
+        let row = data[i];
+        //console.log(row[2],row[3]);
+        let reg = `${row[0]} ${row[1]}`;
+        let lat = row[2];
+        let lng = row[3];
+        let val = row[row.length - 1];
+        //let mrk = L.marker([lat,lng]).addTo(map);
+        //mrk.bindPopup(`${reg}: ${val}`);
 
-//console.log(CONFIRMED);
-//console.log(CONFIRMED);
-for (let i = 1; i < CONFIRMED.length; i++) {
-    let row = CONFIRMED[i];
-    //console.log(row[2],row[3]);
-    let val = row[row.length - 1];
-    let mrk = L.marker([row[2], row[3]]).addTo(map);
-    mrk.bindPopup(`${row[0]} ${row[1]}: ${val}`);
-}
+        //A = r²*PI
+        //r² = A/PI
+        //r = WURZEL(A/PI)
+        let s = 0.5;
+        let r = Math.sqrt(val * s / Math.PI);
+        let circle = L.circleMarker([lat, lng], {
+            radius: r
+        }).addTo(circleGroup);
+        circle.bindPopup(`${reg}: ${val}`);
+    }
+};
