@@ -28,12 +28,7 @@ let drawCircles = function (data) {
         let lat = row[2];
         let lng = row[3];
         let val = row[row.length - 1];
-        //let mrk = L.marker([lat,lng]).addTo(map);
-        //mrk.bindPopup(`${reg}: ${val}`);
-
-        //A = r²*PI
-        //r² = A/PI
-        //r = WURZEL(A/PI)
+        
         let s = 0.5;
         let r = Math.sqrt(val * s / Math.PI);
         let circle = L.circleMarker([lat, lng], {
@@ -42,3 +37,5 @@ let drawCircles = function (data) {
         circle.bindPopup(`${reg}: ${val}`);
     }
 };
+
+drawCircles(CONFIRMED);
