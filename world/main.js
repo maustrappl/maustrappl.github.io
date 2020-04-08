@@ -28,7 +28,7 @@ let drawCircles = function (data) {
         let lat = row[2];
         let lng = row[3];
         let val = row[row.length - 1];
-        
+
         let s = 0.5;
         let r = Math.sqrt(val * s / Math.PI);
         let circle = L.circleMarker([lat, lng], {
