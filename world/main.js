@@ -66,6 +66,7 @@ let drawCircles = function () {
 
         if (val === "0") { 
             continue;
+        }
             // console.log(val)}
         //let mrk = L.marker([lat,lng]).addTo(map);
         //mrk.bindPopup(`${reg}: ${val}`);
