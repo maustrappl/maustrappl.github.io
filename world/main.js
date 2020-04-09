@@ -22,13 +22,17 @@ L.control.layers({
 
 let drawCircles = function (data) {
     let data = CONFIRMED;
+    let header = CONFIRMED[0];
+    let index = header.length -1;
+
+    document.querySelector("#datu").innerHTML = `am${header[index]}`;
     for (let i = 1; i < data.length; i++) {
         let row = data[i];
         //console.log(row[2],row[3]);
         let reg = `${row[0]} ${row[1]}`;
         let lat = row[2];
         let lng = row[3];
-        let val = row[row.length - 1];
+        let val = row[index];
 
         let s = 0.5;
         let r = Math.sqrt(val * s / Math.PI);
@@ -39,6 +43,4 @@ let drawCircles = function (data) {
     }
 };
 
-drawCircles(CONFIRMED);
-drawCircles(RECOVERED)
-drawCircles(DEATHS)
+drawCircles();
