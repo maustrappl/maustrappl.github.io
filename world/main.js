@@ -30,7 +30,7 @@ L.control.layers({
 let drawCircles = function () {
     let data = CONFIRMED;
     let header = CONFIRMED[0];
-    let index = header.length - 1;
+    let index = document.querySelector("slider").value
     let options = document.querySelector("#pulldown").options;
     let value = options[options.selectedIndex].value;
     let label = options[options.selectedIndex].text;
@@ -38,14 +38,14 @@ let drawCircles = function () {
     // console.log(value,label,options);
 
 
-if (value === "confirmed") {
-    data = CONFIRMED;
-    color = "#0074D9";
-} else if (value === "deaths") {
-    data = DEATHS;
-    color = "#B10DC9";
-} else  (data = RECOVERED);
-    color = "2N"
+    if (value === "confirmed") {
+        data = CONFIRMED;
+        color = "#0074D9";
+    } else if (value === "deaths") {
+        data = DEATHS;
+        color = "#B10DC9";
+    } else(data = RECOVERED);
+    color = "2ECC40"
 
     // Datum & Thema anzeigen anzeigen
     document.querySelector("#datum").innerHTML = `am ${header[index]} - ${label}`;
@@ -75,12 +75,15 @@ if (value === "confirmed") {
     }
 };
 
-document.querySelector("#pulldown").onchange = function() {
+document.querySelector("#pulldown").onchange = function () {
     drawCircles();
 };
 
 
 let slider = document.querySelector("#slider");
-slider.min = 4:
-slider.max = CONFIRMED[0].length -1;
+slider.min = 4;
+slider.max = CONFIRMED[0].length - 1;
+slider.step = 1;
+slider.value = slider.max;
+
 drawCircles();
