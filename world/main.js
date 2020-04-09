@@ -21,6 +21,7 @@ L.control.layers({
 }).addTo(map);
 
 let drawCircles = function (data) {
+    let data = CONFIRMED;
     for (let i = 1; i < data.length; i++) {
         let row = data[i];
         //console.log(row[2],row[3]);
