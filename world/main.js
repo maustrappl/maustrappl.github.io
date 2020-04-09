@@ -1,7 +1,7 @@
 let startLayer = L.tileLayer.provider("Esri.WorldTopoMap");
 
 let map = L.map("map", {
-    center: [0, 0],
+    center: [30, 0],
     zoom: 2,
     layers: [
         startLayer
@@ -45,6 +45,7 @@ if (value === "confirmed") {
 
     // Datum & Thema anzeigen anzeigen
     document.querySelector("#datum").innerHTML = `am ${header[index]} - ${label}`;
+    circleGroup.clearLayers();
 
     //console.log(data);
     for (let i = 1; i < data.length; i++) {
