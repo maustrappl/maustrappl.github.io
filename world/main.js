@@ -34,14 +34,18 @@ let drawCircles = function () {
     let options = document.querySelector("#pulldown").options;
     let value = options[options.selectedIndex].value;
     let label = options[options.selectedIndex].text;
+    let color;
     // console.log(value,label,options);
 
 
 if (value === "confirmed") {
     data = CONFIRMED;
+    color = "blue";
 } else if (value === "deaths") {
     data = DEATHS;
-} else  (data = RECOVERED)
+    color = "purple";
+} else  (data = RECOVERED);
+    color = "green"
 
     // Datum & Thema anzeigen anzeigen
     document.querySelector("#datum").innerHTML = `am ${header[index]} - ${label}`;
