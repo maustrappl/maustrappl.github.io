@@ -21,8 +21,9 @@ L.control.layers({
         L.tileLayer.provider("BasemapAT.overlay")
     ])
 }).addTo(map);
+let welkUrl = "https://data.wien.gv.at/daten/geo?service=WFS&request=GetFeature&version=1.1.0&typeName=ogdwien:SPAZIERPUNKTOGD &srsName=EPSG:4326&outputFormat=json"
 
-let walk = L.geoJson(SPAZIERGANG, {
+let walk = L.geoJson.ajax (walkUrl, {
     pointToLayer: function(point, latlng) {
         let icon = L.icon({
             iconUrl: 'icons/sight.svg',
