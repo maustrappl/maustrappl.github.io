@@ -80,9 +80,14 @@ L.geoJson.ajax(wandern, {
                 dashArray: "1,5",
                 fillOpacity: 0.3
             };
+            console.log("Feature: ", feature);
+        layer.bindPopup(`<h3>${feature.properties.BEZ_TEXT}</h3>
+        `);
     }
-
+    
 }).addTo(walkGroup);
+
+// weltulturerbe
 
 let heritage = "https://data.wien.gv.at/daten/geo?service=WFS&request=GetFeature&version=1.1.0&typeName=ogdwien:WELTKULTERBEOGD&srsName=EPSG:4326&outputFormat=json";
 
