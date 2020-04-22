@@ -32,7 +32,7 @@ let awsUrl = "https://aws.openweb.cc/stations";
 let aws = L.geoJson.ajax(awsUrl, {
     filter: function (feature) {
         console.log("Feature in filter: ", feature);
-        // return feature.geometry.coordinates[2] > 100;
+        return feature.geometry.coordinates[2] > 1;
     },
     pointToLayer: function (point, latlng) {
         // console.log("point: ", point);
