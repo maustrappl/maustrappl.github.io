@@ -78,9 +78,9 @@ let heritage = "https://data.wien.gv.at/daten/geo?service=WFS&request=GetFeature
 
 L.geoJson.ajax(heritage, {
     style: function (weg) {
-        if (weg.properties.TYP == "2")
+        if (weg.properties.TYP == "1")
         return {
-            color: "blue",
+            color: "yellow",
             dashArray:"3,4",
             fillOpacity: 0.3
         };
