@@ -44,7 +44,7 @@ let sights = L.geoJson.ajax(sightUrl, { //Punkte als Marker setzen
         let marker = L.marker(latlng, {
             icon: icon
         });
-    
+
 
         // name, adresse, kurzbeschreibung und link
         marker.bindPopup(`<h3>${point.properties.NAME}</h3>  
@@ -68,20 +68,20 @@ let wandern = "https://data.wien.gv.at/daten/geo?service=WFS&request=GetFeature&
 L.geoJson.ajax(wandern, {
     style: function (weg) {
         if (weg.properties.TYP == "1") {
-        return {
-            color: "black",
-            dashArray:"6,4",
-            weight: 5
-        };
-    } else if (weg.properties.TYP == "2") 
-        
-        return {
-            color: "#111111", 
-            dashArray: "1,10", 
-            fillOpacity: 0.3
-        }; 
+            return {
+                color: "black",
+                dashArray: "4,7",
+                weight: 3.5
+            };
+        } else if (weg.properties.TYP == "2")
+
+            return {
+                color: "#111111",
+                dashArray: "1,10",
+                fillOpacity: 0.3
+            };
     }
-    
+
 }).addTo(walkGroup);
 
 let heritage = "https://data.wien.gv.at/daten/geo?service=WFS&request=GetFeature&version=1.1.0&typeName=ogdwien:WELTKULTERBEOGD&srsName=EPSG:4326&outputFormat=json";
@@ -89,10 +89,10 @@ let heritage = "https://data.wien.gv.at/daten/geo?service=WFS&request=GetFeature
 L.geoJson.ajax(heritage, {
     style: function (erbe) {
         if (erbe.properties.TYP == "1")
-        return {
-            color: "yellow",
-            fillOpacity: 0.3
-        };
+            return {
+                color: "yellow",
+                fillOpacity: 0.3
+            };
     },
     onEachFeature: function (feature, layer) {
         //console.log("Feature: ", feature);
