@@ -32,7 +32,7 @@ let awsUrl = "https://aws.openweb.cc/stations";
 let aws = L.geoJson.ajax(awsUrl, {
     filter: function (feature) {
         console.log("Feature in filter: ", feature);
-        return feature.properties.LT !=null;//alle wetterstationen deren termperatur nicht null ist filtern
+        return feature.properties.LT != null; //alle wetterstationen deren termperatur nicht null ist filtern
     },
     pointToLayer: function (point, latlng) {
         // console.log("point: ", point);
