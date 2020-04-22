@@ -68,7 +68,7 @@ let wandern = "https://data.wien.gv.at/daten/geo?service=WFS&request=GetFeature&
 L.geoJson.ajax(wandern, {
     style: function () {
         return {
-            color: "green",
+            color: "black",
             weight: 5
         };
     }
