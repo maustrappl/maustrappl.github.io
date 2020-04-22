@@ -67,13 +67,21 @@ let wandern = "https://data.wien.gv.at/daten/geo?service=WFS&request=GetFeature&
 
 L.geoJson.ajax(wandern, {
     style: function (weg) {
-        if (weg.properties.TYP == "1")
+        if (weg.properties.TYP == "1") {
         return {
             color: "black",
             dashArray:"1,9",
             weight: 5
         };
+    } else if (weg.properties.TYP == "2") 
+        
+        return {
+            color: "#111111", 
+            dashArray: "1,10", 
+            fillOpacity: 0.3
+        }; 
     }
+    
 }).addTo(walkGroup);
 
 let heritage = "https://data.wien.gv.at/daten/geo?service=WFS&request=GetFeature&version=1.1.0&typeName=ogdwien:WELTKULTERBEOGD&srsName=EPSG:4326&outputFormat=json";
