@@ -35,8 +35,8 @@ L.control.layers({
 
 let sightUrl = "https://data.wien.gv.at/daten/geo?service=WFS&request=GetFeature&version=1.1.0&typeName=ogdwien:SPAZIERPUNKTOGD &srsName=EPSG:4326&outputFormat=json";
 
-let sights = L.geoJson.ajax(sightUrl, {
-    pointToLayer: function (point, latlng) {
+let sights = L.geoJson.ajax(sightUrl, { //Punkte als Marker setzen
+    pointToLayer: function (point, latlng) { //definiton der MArker
         let icon = L.icon({
             iconUrl: 'icons/sight.svg',
             iconSize: [32, 32]
