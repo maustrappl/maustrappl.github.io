@@ -73,11 +73,6 @@ L.geoJson.ajax(wandern, {
             dashArray:"1,9",
             weight: 5
         };
-        else if (weg.properties.TYP == "2")
-        return {
-            color: "blue",
-            dashArray:"1,9",
-            weight: 5
     }
 }).addTo(walkGroup);
 
