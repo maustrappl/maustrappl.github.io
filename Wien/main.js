@@ -76,8 +76,8 @@ L.geoJson.ajax(wandern, {
         } else if (weg.properties.TYP == "2")
 
             return {
-                color: "#111111",
-                dashArray: "1,10",
+                color: "black",
+                dashArray: "1,5",
                 fillOpacity: 0.3
             };
     }
