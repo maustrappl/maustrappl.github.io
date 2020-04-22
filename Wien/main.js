@@ -70,7 +70,7 @@ L.geoJson.ajax(wandern, {
         if (weg.properties.TYP == "1") {
         return {
             color: "black",
-            dashArray:"1,9",
+            dashArray:"6,4",
             weight: 5
         };
     } else if (weg.properties.TYP == "2") 
