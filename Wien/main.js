@@ -46,7 +46,7 @@ let sights = L.geoJson.ajax(sightUrl, { //Punkte als Marker setzen
         });
         // console.log("Point", point);
         marker.bindPopup(`<h3>${point.properties.NAME}</h3>  
-        <p><a target="links" href="${point.properties.WEITERE_INF}">weitere Informationen</a></p>
+        <p><a target="links" href="${point.properties.WEITERE_INF}">weiterführende Informationen</a></p>
         `);
         return marker;
     }
