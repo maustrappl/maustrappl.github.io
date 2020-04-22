@@ -44,7 +44,7 @@ let sights = L.geoJson.ajax(sightUrl, { //Punkte als Marker setzen
         let marker = L.marker(latlng, {
             icon: icon
         });
-        // console.log("Point", point);
+    
 
         // name, adresse, kurzbeschreibung und link
         marker.bindPopup(`<h3>${point.properties.NAME}</h3>  
@@ -79,7 +79,7 @@ let heritage = "https://data.wien.gv.at/daten/geo?service=WFS&request=GetFeature
 L.geoJson.ajax(heritage, {
     style: function () {
         return {
-            color: "salmon",
+            color: "blue",
             fillOpacity: 0.3
         };
     },
