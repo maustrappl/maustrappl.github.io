@@ -21,7 +21,7 @@ L.control.layers({
     "BasemapAT.orthofoto+overlay": L.layerGroup([
         L.tileLayer.provider("BasemapAT.orthofoto"),
         L.tileLayer.provider("BasemapAT.overlay")
-    ])
+    ]) 
 }, {
     "Wetterstationen Tirol": awsLayer
 }).addTo(map);
