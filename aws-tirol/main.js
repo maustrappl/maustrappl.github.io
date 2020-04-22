@@ -46,6 +46,7 @@ let aws = L.geoJson.ajax(awsUrl, {
         <li>Relative Luftfeuchte: ${point.properties.RH} %</li>
         <li>Schneehöhe: ${point.properties.HS} cm</li>
         </ul>
+        <p><a target="links" href="https://lawine.tirol.gv.at/data/grafiken/1100/standard/tag/${point.properties.plot}.png">Weiterführende Grafiken</a></p>
         `);
         return marker;
     }
