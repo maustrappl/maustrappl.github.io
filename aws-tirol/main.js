@@ -23,7 +23,8 @@ L.control.layers({
         L.tileLayer.provider("BasemapAT.overlay")
     ]) 
 }, {
-    "Wetterstationen Tirol": awsLayer
+    "Wetterstationen Tirol": awsLayer,
+
 }).addTo(map);
 
 let awsUrl = "https://aws.openweb.cc/stations";
@@ -51,3 +52,17 @@ let aws = L.geoJson.ajax(awsUrl, {
         return marker;
     }
 }).addTo(awsLayer);
+let drawTemperature = function(jsonData) {
+    console.log("aus der Funktion", jsonData);
+    L.geoJson(jsonData,{
+        pointToLayer: function (feature,latlng) {
+            return L.marker(latlng) {
+                title: `${feature.properties.name} (${feature.geometry.coordinates[2]}m)`,
+                icon: L.divIcon({
+                    html:`<div>${feature.properties.LT.toFxed(1)}</div>`,
+                    className:"ignore-me"// dirty hack
+                })
+            })
+        }
+    }).addTo(overlay.Temperature)
+}
