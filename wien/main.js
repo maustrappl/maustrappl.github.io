@@ -38,7 +38,7 @@ let sightUrl = "https://data.wien.gv.at/daten/geo?service=WFS&request=GetFeature
 let sights = L.geoJson.ajax(sightUrl, { //Punkte als Marker setzen
     pointToLayer: function (point, latlng) { //definiton der MArker
         let icon = L.icon({
-            iconUrl: 'icons/sight.svg',
+            iconUrl: 'Icons/sight.svg',
             iconSize: [32, 32]
         });
         let marker = L.marker(latlng, {
