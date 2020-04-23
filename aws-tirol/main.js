@@ -93,6 +93,8 @@ let drawTemperature = function(jsonData) {
     }).addTo(overlay.temperature);
 };
 
+
+
 let drawWind = function(jsonData) {
     //console.log("aus der Funktion", jsonData);
     L.geoJson(jsonData, {
@@ -101,10 +103,11 @@ let drawWind = function(jsonData) {
         },
         pointToLayer: function(feature, latlng) {
             let kmh = Math.round(feature.properties.WG / 1000 * 3600);
+            let color = getColor(feature.properties.WG,COLORS.wind);
             return L.marker(latlng, {
                 title: `${feature.properties.name} (${feature.geometry.coordinates[2]}m)`,
                 icon: L.divIcon({
-                    html: `<div class="label-wind">${kmh}</div>`,
+                    html: `<div class="label-wind" style="background-color:${color}">${kmh}</div>`,
                     className: "ignore-me" // dirty hack
                 })
             })
@@ -118,7 +121,7 @@ aws.on("data:loaded", function() {
     drawWind(aws.toGeoJSON());
     map.fitBounds(overlay.stations.getBounds());
 
-    overlay.temperature.addTo(map);
+    overlay.wind.addTo(map);
 
     //console.log(COLORS);
 });
