@@ -11,6 +11,9 @@ let map = L.map("map", {
 let sightGroup = L.markerClusterGroup().addTo(map);
 let walkGroup = L.featureGroup().addTo(map);
 let heritageGroup = L.featureGroup().addTo(map);
+let overlay = {
+    stations: L.featureGroup()
+}
 
 L.control.layers({
     "BasemapAT.grau": startLayer,
@@ -105,4 +108,12 @@ L.geoJson.ajax(heritage, {
         <p>${feature.properties.INFO}</p>
         `);
     }
-}).addTo(heritageGroup);
+}).addTo(overlay.stations);
+
+aws.on("data:loaded",function () {
+console.log(aws.toGeoJSON());
+map.fitBounds(overlay.stations.getBounds());
+
+overlay.stations.addTo(map);
+
+});
