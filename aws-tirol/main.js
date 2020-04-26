@@ -155,6 +155,7 @@ aws.on("data:loaded", function () {
     //console.log(COLORS);
 });
 
+// rainviewer Plugin
 L.control.rainviwer({ 
     position: 'bottomleft',
     nextButtonText: '>',
