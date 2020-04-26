@@ -96,14 +96,14 @@ let drawTemperature = function(jsonData) {
 };
 
 
-// // relative Luftfeuchte
-// let drawTemperature = function(jsonData) {
-//     //console.log("aus der Funktion", jsonData);
-//     L.geoJson(jsonData, {
-//         filter: function(feature) {
-//             return feature.properties.LT;
-//         },
-//         pointToLayer: function(feature, latlng) {
+ // relative Luftfeuchte
+let drawHumidity = function(jsonData) {
+     //console.log("aus der Funktion", jsonData);
+     L.geoJson(jsonData, {
+         filter: function(feature) {
+             return feature.properties.RH;
+         },
+         pointToLayer: function(feature, latlng) {
 //             let color = getColor(feature.properties.LT,COLORS.temperature);
 //             return L.marker(latlng, {
 //                 title: `${feature.properties.name} (${feature.geometry.coordinates[2]}m)`,
