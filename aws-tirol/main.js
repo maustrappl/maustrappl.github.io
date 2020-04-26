@@ -30,7 +30,7 @@ L.control.layers({
     "Wetterstationen Tirol": overlay.stations,
     "Temperatur (°C)": overlay.temperature,
     "Windgeschwindigkeit (km/h)": overlay.wind,
-    // "Relative Luftfeuchte (%)": overlay.humidity
+    //"Relative Luftfeuchte (%)": overlay.humidity
 }).addTo(map);
 
 let awsUrl = "https://aws.openweb.cc/stations";
@@ -105,7 +105,7 @@ let drawHumidity = function (jsonData) {
             return feature.properties.RH;
         },
         pointToLayer: function (feature, latlng) {
-            let color = getColor(feature.properties.LT, COLORS.humidity);
+            let color = getColor(feature.properties.LT)//, COLORS.humidity);
             return L.marker(latlng, {
                 title: `${feature.properties.name} (${feature.geometry.coordinates[2]}m)`,
                 icon: L.divIcon({
