@@ -29,7 +29,8 @@ L.control.layers({
 }, {
     "Wetterstationen Tirol": overlay.stations,
     "Temperatur (°C)": overlay.temperature,
-    "Windgeschwindigkeit (km/h)": overlay.wind
+    "Windgeschwindigkeit (km/h)": overlay.wind,
+    // "Relative Luftfeuchte (%) ": overlay.humidity
 }).addTo(map);
 
 let awsUrl = "https://aws.openweb.cc/stations";
@@ -58,7 +59,7 @@ let aws = L.geoJson.ajax(awsUrl, {
     }
 }).addTo(overlay.stations);
 
-let getColor = function(val, ramp) {
+let getColor = function (val, ramp) {
     //console.log(val, ramp);
     let col = "red";
 
@@ -76,14 +77,14 @@ let getColor = function(val, ramp) {
 
 //console.log(color);
 
-let drawTemperature = function(jsonData) {
-    console.log("aus der Funktion", jsonData);
+let drawTemperature = function (jsonData) {
+    //console.log("aus der Funktion", jsonData);
     L.geoJson(jsonData, {
-        filter: function(feature) {
+        filter: function (feature) {
             return feature.properties.LT;
         },
-        pointToLayer: function(feature, latlng) {
-            let color = getColor(feature.properties.LT,COLORS.temperature);
+        pointToLayer: function (feature, latlng) {
+            let color = getColor(feature.properties.LT, COLORS.temperature);
             return L.marker(latlng, {
                 title: `${feature.properties.name} (${feature.geometry.coordinates[2]}m)`,
                 icon: L.divIcon({
@@ -96,41 +97,41 @@ let drawTemperature = function(jsonData) {
 };
 
 
- // relative Luftfeuchte
-let drawHumidity = function(jsonData) {
-     //console.log("aus der Funktion", jsonData);
-     L.geoJson(jsonData, {
-         filter: function(feature) {
-             return feature.properties.RH;
-         },
-         pointToLayer: function(feature, latlng) {
-             let color = getColor(feature.properties.LT,COLORS.humidity);
-             return L.marker(latlng, {
-                 title: `${feature.properties.name} (${feature.geometry.coordinates[2]}m)`,
-                 icon: L.divIcon({
-                     html: `<div class="label-humidity" style="background-color:${color}">${feature.properties.RH.toFixed(2)}</div>`,
-                     className: "ignore-me" // dirty hack
-                 })
-             })
-         }
-     }).addTo(overlay.temperature);
- };
-
-
-
-
-
-
-
-let drawWind = function(jsonData) {
+// relative Luftfeuchte
+let drawHumidity = function (jsonData) {
     //console.log("aus der Funktion", jsonData);
     L.geoJson(jsonData, {
-        filter: function(feature) {
+        filter: function (feature) {
+            return feature.properties.RH;
+        },
+        pointToLayer: function (feature, latlng) {
+            let color = getColor(feature.properties.LT, COLORS.humidity);
+            return L.marker(latlng, {
+                title: `${feature.properties.name} (${feature.geometry.coordinates[2]}m)`,
+                icon: L.divIcon({
+                    html: `<div class="label-humidity" style="background-color:${color}">${feature.properties.RH.toFixed(2)}</div>`,
+                    className: "ignore-me" // dirty hack
+                })
+            })
+        }
+    }).addTo(overlay.temperature);
+};
+
+
+
+
+
+
+
+let drawWind = function (jsonData) {
+    //console.log("aus der Funktion", jsonData);
+    L.geoJson(jsonData, {
+        filter: function (feature) {
             return feature.properties.WG;
         },
-        pointToLayer: function(feature, latlng) {
+        pointToLayer: function (feature, latlng) {
             let kmh = Math.round(feature.properties.WG / 1000 * 3600);
-            let color = getColor(kmh,COLORS.wind);
+            let color = getColor(kmh, COLORS.wind);
             let rotation = feature.properties.WR;
             return L.marker(latlng, {
                 title: `${feature.properties.name} (${feature.geometry.coordinates[2]}m) - ${kmh} km/h`,
@@ -143,7 +144,7 @@ let drawWind = function(jsonData) {
     }).addTo(overlay.wind);
 };
 
-aws.on("data:loaded", function() {
+aws.on("data:loaded", function () {
     //console.log(aws.toGeoJSON());
     drawTemperature(aws.toGeoJSON());
     drawWind(aws.toGeoJSON());
