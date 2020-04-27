@@ -79,4 +79,17 @@ main h2 {
     1px -1px 0 whitesmoke,
    -1px  1px 0 whitesmoke,
     1px  1px 0 whitesmoke
+
+.label-snowhight{
+    font-size: 1.25em;
+    font-weight: bolder;
+    padding: 0.3em;
+    border: 1px solid gray;
+    background-color: silver;
+    display: inline;
+    text-shadow: 
+    -1px -1px 0 whitesmoke,
+    1px -1px 0 whitesmoke,
+   -1px  1px 0 whitesmoke,
+    1px  1px 0 whitesmoke
 }
