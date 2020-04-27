@@ -98,25 +98,7 @@ let drawTemperature = function (jsonData) {
 };
 
 
-// relative Luftfeuchte
-let drawHumidity = function (jsonData) {
-    //console.log("aus der Funktion", jsonData);
-    L.geoJson(jsonData, {
-        filter: function (feature) {
-            return feature.properties.RH;
-        },
-        pointToLayer: function (feature, latlng) {
-            //let color = getColor(feature.properties.LT), COLORS.humidity);
-            return L.marker(latlng, {
-                title: `${feature.properties.name} (${feature.geometry.coordinates[2]}m)`,
-                icon: L.divIcon({
-                    html: `<div class="label-humidity" style="background-color:${color}">${feature.properties.RH.toFixed(2)}</div>`,
-                    className: "ignore-me" // dirty hack
-                })
-            })
-        }
-    }).addTo(overlay.humidity);
-};
+
 
 
 let drawWind = function (jsonData) {
@@ -138,6 +120,26 @@ let drawWind = function (jsonData) {
             })
         }
     }).addTo(overlay.wind);
+};
+
+// relative Luftfeuchte
+let drawHumidity = function (jsonData) {
+    //console.log("aus der Funktion", jsonData);
+    L.geoJson(jsonData, {
+        filter: function (feature) {
+            return feature.properties.RH;
+        },
+        pointToLayer: function (feature, latlng) {
+            //let color = getColor(feature.properties.LT), COLORS.humidity);
+            return L.marker(latlng, {
+                title: `${feature.properties.name} (${feature.geometry.coordinates[2]}m)`,
+                icon: L.divIcon({
+                    html: `<div class="label-humidity" style="background-color:${color}">${feature.properties.RH.toFixed(2)}</div>`,
+                    className: "ignore-me" // dirty hack
+                })
+            })
+        }
+    }).addTo(overlay.humidity);
 };
 
 aws.on("data:loaded", function () {
