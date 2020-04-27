@@ -24,31 +24,10 @@ const COLORS = {
         [5, "rgb(255,255,100)"]
     ],
 
-    humidity[ <
-        rect class = "legend-rect"
-        width = "41"
-        height = "18"
-        x = "0"
-        y = "0"
-        fill = "rgb(0,165,255)" > < /rect><rect class="legend-rect" width="41" height="18" x="0" y="18" fill="rgb(0,205,255)"></rect > < rect class = "legend-rect"
-        width = "41"
-        height = "18"
-        x = "0"
-        y = "36"
-        fill = "rgb(140,255,255)" > < /rect><rect class="legend-rect" width="41" height="18" x="0" y="54" fill="rgb(255,255,195)"></rect > < line class = "legend-border"
-        x1 = "0"
-        x2 = "41"
-        y1 = "0"
-        y2 = "0" > < /line><line class="legend-border" x1="0" x2="41" y1="72" y2="72"></line > < text class = "legend-text"
-        x = "20.5"
-        y = "18"
-        dy = "0.35em"
-        font - size = "12"
-        text - anchor = "middle" > 80 < /text><text class="legend-text" x="20.5" y="36" dy="0.35em" font-size="12" text-anchor="middle">60</text > < text class = "legend-text"
-        x = "20.5"
-        y = "54"
-        dy = "0.35em"
-        font - size = "12"
-        text - anchor = "middle" > 40 < /text>
-    ]
+    humidity[ 
+        [9998, "rgb(0,165,255)"],
+        [80, "rgb(0,205,255)"],
+        [60, "rgb(140,255,255)"],
+        [40, "rgb(255,255,195)"]
+       
 };
