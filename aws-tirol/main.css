@@ -68,12 +68,15 @@ main h2 {
 }
 
 .label-humidity{
-    font-size: 2.0em;
-    font-weight: bold;
+    font-size: 1.25em;
+    font-weight: bolder;
+    padding: 0.3em;
+    border: 1px solid gray;
+    background-color: silver;
     display: inline;
     text-shadow: 
-    -1px -1px 0 black,
-    1px -1px 0 black,
-   -1px  1px 0 black,
-    1px  1px 0 black
+    -1px -1px 0 whitesmoke,
+    1px -1px 0 whitesmoke,
+   -1px  1px 0 whitesmoke,
+    1px  1px 0 whitesmoke
 }
