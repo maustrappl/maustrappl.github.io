@@ -32,7 +32,7 @@ L.control.layers({
     "Temperatur (°C)": overlay.temperature,
     "Windgeschwindigkeit (km/h)": overlay.wind,
 
-    //"Relative Luftfeuchte (%)": overlay.humidity
+   "Relative Luftfeuchte (%)": overlay.humidity
 }).addTo(map);
 
 let awsUrl = "https://aws.openweb.cc/stations";
@@ -147,7 +147,7 @@ aws.on("data:loaded", function () {
     drawWind(aws.toGeoJSON());
     drawHumidity(aws.toGeoJSON());
 
-    
+
     map.fitBounds(overlay.stations.getBounds());
 
     overlay.wind.addTo(map);
