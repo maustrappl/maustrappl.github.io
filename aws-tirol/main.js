@@ -33,7 +33,7 @@ L.control.layers({
     "Temperatur (°C)": overlay.temperature,
     "Windgeschwindigkeit (km/h)": overlay.wind,
     "Relative Luftfeuchte (%)": overlay.humidity
-    "schneehöhe (m)":overlay.snowhight
+    "Schneehöhe (m)":overlay.snowhight
 }).addTo(map);
 
 let awsUrl = "https://aws.openweb.cc/stations";
@@ -157,7 +157,7 @@ let drawSnowhight = function (jsonData) {
             return L.marker(latlng, {
                 title: `${feature.properties.name} (${feature.geometry.coordinates[2]}m)`,
                 icon: L.divIcon({
-                    html: `<div class="label-humidity" style="background-color:${color}">${feature.properties.HS.toFixed(2)}</div>`,
+                    html: `<div class="label-snowhight" style="background-color:${color}">${feature.properties.HS.toFixed(2)}</div>`,
                     className: "ignore-me" //dirty
                 })
             })
