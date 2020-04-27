@@ -13,6 +13,7 @@ let overlay = {
     temperature: L.featureGroup(),
     wind: L.featureGroup(),
     humidity: L.featureGroup()
+
 }
 
 L.control.layers({
@@ -31,8 +32,8 @@ L.control.layers({
     "Wetterstationen Tirol": overlay.stations,
     "Temperatur (°C)": overlay.temperature,
     "Windgeschwindigkeit (km/h)": overlay.wind,
-
-   "Relative Luftfeuchte (%)": overlay.humidity
+    "Relative Luftfeuchte (%)": overlay.humidity
+    "schneehöhe (m)":overlay.snowhight
 }).addTo(map);
 
 let awsUrl = "https://aws.openweb.cc/stations";
@@ -125,16 +126,38 @@ let drawWind = function (jsonData) {
 let drawHumidity = function (jsonData) {
     //console.log("aus der Funktion", jsonData);
     L.geoJson(jsonData, {
-            filter: function (feature) {
-                return feature.properties.RH;
-            },
-            pointToLayer: function (feature, latlng) {
-                let ganz = Math.round(feature.properties.RH)
-                let color = getColor(ganz,COLORS.humidity);
+        filter: function (feature) {
+            return feature.properties.RH;
+        },
+        pointToLayer: function (feature, latlng) {
+            let ganz = Math.round(feature.properties.RH)
+            let color = getColor(ganz, COLORS.humidity);
             return L.marker(latlng, {
                 title: `${feature.properties.name} (${feature.geometry.coordinates[2]}m)`,
                 icon: L.divIcon({
                     html: `<div class="label-humidity" style="background-color:${color}">${feature.properties.RH.toFixed(2)}</div>`,
+                    className: "ignore-me" //dirty
+                })
+            })
+        }
+    }).addTo(overlay.humidity);
+};
+
+
+// schneehöhe
+let drawSnowhight = function (jsonData) {
+    //console.log("aus der Funktion", jsonData);
+    L.geoJson(jsonData, {
+        filter: function (feature) {
+            return feature.properties.HS;
+        },
+        pointToLayer: function (feature, latlng) {
+            let ganz = Math.round(feature.properties.HS)
+            let color = getColor(ganz, COLORS.humidity);
+            return L.marker(latlng, {
+                title: `${feature.properties.name} (${feature.geometry.coordinates[2]}m)`,
+                icon: L.divIcon({
+                    html: `<div class="label-humidity" style="background-color:${color}">${feature.properties.HS.toFixed(2)}</div>`,
                     className: "ignore-me" //dirty
                 })
             })
@@ -147,7 +170,7 @@ aws.on("data:loaded", function () {
     drawTemperature(aws.toGeoJSON());
     drawWind(aws.toGeoJSON());
     drawHumidity(aws.toGeoJSON());
-
+    drawSnowhight(aws.toGeoJSON());
 
     map.fitBounds(overlay.stations.getBounds());
 
