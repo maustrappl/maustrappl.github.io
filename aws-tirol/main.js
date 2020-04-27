@@ -153,7 +153,7 @@ let drawSnowhight = function (jsonData) {
         },
         pointToLayer: function (feature, latlng) {
             let ganz = Math.round(feature.properties.HS)
-            let color = getColor(ganz, COLORS.humidity);
+            let color = getColor(ganz, COLORS.snowhight);
             return L.marker(latlng, {
                 title: `${feature.properties.name} (${feature.geometry.coordinates[2]}m)`,
                 icon: L.divIcon({
@@ -162,7 +162,7 @@ let drawSnowhight = function (jsonData) {
                 })
             })
         }
-    }).addTo(overlay.humidity);
+    }).addTo(overlay.snowhight);
 };
 
 aws.on("data:loaded", function () {
