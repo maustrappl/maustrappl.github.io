@@ -181,7 +181,7 @@ aws.on("data:loaded", function () {
 });
 
 // rainviewer Plugin
-L.control.rainviwer({
+L.control.rainviewer({
     position: 'bottomleft',
     nextButtonText: '>',
     playStopButtonText: 'Play/Stop',
