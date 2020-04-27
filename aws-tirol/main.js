@@ -32,7 +32,7 @@ L.control.layers({
     "Wetterstationen Tirol": overlay.stations,
     "Temperatur (°C)": overlay.temperature,
     "Windgeschwindigkeit (km/h)": overlay.wind,
-    "Relative Luftfeuchte (%)": overlay.humidity
+    "Relative Luftfeuchte (%)": overlay.humidity,
     "Schneehöhe (cm)":overlay.snowhight
 }).addTo(map);
 
