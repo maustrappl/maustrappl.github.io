@@ -30,6 +30,7 @@ L.control.layers({
     "Wetterstationen Tirol": overlay.stations,
     "Temperatur (°C)": overlay.temperature,
     "Windgeschwindigkeit (km/h)": overlay.wind,
+    
     //"Relative Luftfeuchte (%)": overlay.humidity
 }).addTo(map);
 
@@ -114,13 +115,8 @@ let drawHumidity = function (jsonData) {
                 })
             })
         }
-    }).addTo(overlay.temperature);
+    }).addTo(overlay.humidity);
 };
-
-
-
-
-
 
 
 let drawWind = function (jsonData) {
@@ -148,6 +144,7 @@ aws.on("data:loaded", function () {
     //console.log(aws.toGeoJSON());
     drawTemperature(aws.toGeoJSON());
     drawWind(aws.toGeoJSON());
+    drawHumidity(aws.toGeoJSON());
     map.fitBounds(overlay.stations.getBounds());
 
     overlay.wind.addTo(map);
