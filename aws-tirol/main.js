@@ -11,7 +11,8 @@ let map = L.map("map", {
 let overlay = {
     stations: L.featureGroup(),
     temperature: L.featureGroup(),
-    wind: L.featureGroup()
+    wind: L.featureGroup(),
+    humidity: L.featureGroup()
 }
 
 L.control.layers({
@@ -30,7 +31,7 @@ L.control.layers({
     "Wetterstationen Tirol": overlay.stations,
     "Temperatur (°C)": overlay.temperature,
     "Windgeschwindigkeit (km/h)": overlay.wind,
-    
+
     //"Relative Luftfeuchte (%)": overlay.humidity
 }).addTo(map);
 
@@ -42,7 +43,6 @@ let aws = L.geoJson.ajax(awsUrl, {
         return feature.properties.LT;
     },
     pointToLayer: function (point, latlng) {
-        // console.log("point: ", point);
         let marker = L.marker(latlng).bindPopup(`
         <h3>${point.properties.name} ${point.geometry.coordinates[2]} m</h3>
         <ul>
@@ -61,7 +61,6 @@ let aws = L.geoJson.ajax(awsUrl, {
 }).addTo(overlay.stations);
 
 let getColor = function (val, ramp) {
-    //console.log(val, ramp);
     let col = "red";
 
     for (let i = 0; i < ramp.length; i++) {
@@ -126,16 +125,16 @@ let drawWind = function (jsonData) {
 let drawHumidity = function (jsonData) {
     //console.log("aus der Funktion", jsonData);
     L.geoJson(jsonData, {
-        filter: function (feature) {
-            return feature.properties.RH;
-        },
-        pointToLayer: function (feature, latlng) {
-            let color = getColor(feature.properties.LT), COLORS.humidity);
+            filter: function (feature) {
+                return feature.properties.RH;
+            },
+            pointToLayer: function (feature, latlng) {
+                let color = getColor(feature.properties.RH,COLORS.humidity);
             return L.marker(latlng, {
                 title: `${feature.properties.name} (${feature.geometry.coordinates[2]}m)`,
                 icon: L.divIcon({
                     html: `<div class="label-humidity" style="background-color:${color}">${feature.properties.RH.toFixed(2)}</div>`,
-                    className: "ignore-me" // dirty hack
+                    className: "ignore-me" //dirty
                 })
             })
         }
@@ -147,6 +146,8 @@ aws.on("data:loaded", function () {
     drawTemperature(aws.toGeoJSON());
     drawWind(aws.toGeoJSON());
     drawHumidity(aws.toGeoJSON());
+
+    
     map.fitBounds(overlay.stations.getBounds());
 
     overlay.wind.addTo(map);
@@ -155,7 +156,7 @@ aws.on("data:loaded", function () {
 });
 
 // rainviewer Plugin
-L.control.rainviwer({ 
+L.control.rainviwer({
     position: 'bottomleft',
     nextButtonText: '>',
     playStopButtonText: 'Play/Stop',
