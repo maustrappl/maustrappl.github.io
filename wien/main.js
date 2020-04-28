@@ -98,12 +98,12 @@ L.geoJson.ajax(heritage, {
     style: function (feature) {
         if (feature.properties.TYP == "1") {
             return {
-                color: "blue",
+                color: "salmon",
                 fillOpacity: 0.3
             };
         } else {
             return {
-                color:"black",
+                color:"yellow",
                 fillOpacity: 0.3
                 
             };
