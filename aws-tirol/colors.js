@@ -29,46 +29,14 @@ const COLORS = {
             [80, "rgb(0,205,255)"],
             [60, "rgb(140,255,255)"],
             [40, "rgb(255,255,195)"]
-        ]
-        };
+        ],
+        
 
-            snowhight: [ <
-                rect class = "legend-rect"
-                  
-                  
-                x = "0"
-                y = "0"
-                fill = "rgb(204,12,232)" > < /rect><rect class="legend-rect" width="41" height="18" x="0" y="18" fill="rgb(120,75,255)"></rect > < rect class = "legend-rect"
-                  
-                  
-                x = "0"
-                y = "36"
-                fill = "rgb(3,91,190)" > < /rect><rect class="legend-rect" width="41" height="18" x="0" y="54" fill="rgb(4,129,255)"></rect > < rect class = "legend-rect"
-                  
-                  
-                
-                fill = "rgb(3,205,255)" > < /rect><rect class="legend-rect" width="41" height="18" x="0" y="90" fill="rgb(140,255,255)"></rect > < rect class = "legend-rect"
-                  
-                  
-               
-                fill = "rgb(176,255,188)" > < /rect><rect class="legend-rect" width="41" height="18" x="0" y="126" fill="rgb(255,255,179)"></rect > < rect class = "legend-rect"
-                  
-                  
-                x = "0"
-                y = "144"
-                fill = "rgb(255,255,254)" > < /rect><line class="legend-border" x1="0" x2="41" y1="0" y2="0"></line > < line class = "legend-border"
-               400</text > < text class = "legend-text"
-              
-                300 < /text><text class="legend-text" x="20.5" y="54" dy="0.35em" font-size="12" text-anchor="middle">200</text > < text class = "legend-text"
-                
-               100 < /text><text class="legend-text" x="20.5" y="90" dy="0.35em" font-size="12" text-anchor="middle">50</text > < text class = "legend-text"
-              
-                25 < /text><text class="legend-text" x="20.5" y="126" dy="0.35em" font-size="12" text-anchor="middle">10</text > < text class = "legend-text"
-                x = "20.5"
-                y = "144"
-                dy = "0.35em"
-                font - size = "12"
-                text - anchor = "middle" > 1 < /text>]
-
+        snowhight: [                          
+            [400,"rgb(204,12,232)"],   
+            [300, "rgb(3,91,190)"],
+            [100,"rgb(3,205,255)"], 
+            [25,"rgb(176,255,188)"],
+            [10,"rgb(255,255,254)"],
             ]
         };
