@@ -122,5 +122,4 @@ console.log(aws.toGeoJSON());
 map.fitBounds(overlay.stations.getBounds());
 
 overlay.stations.addTo(map);
-
-});
+}).addTo(heritageGroup);
