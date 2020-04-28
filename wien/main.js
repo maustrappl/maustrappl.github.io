@@ -103,7 +103,8 @@ L.geoJson.ajax(heritage, {
             };
         } else {
             return {
-                color:"black"
+                color:"black",
+                fillOpacity: 0.3
                 
             };
         }
