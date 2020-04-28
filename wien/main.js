@@ -101,6 +101,12 @@ L.geoJson.ajax(heritage, {
                 color: "blue",
                 fillOpacity: 0.3
             };
+        } else {
+            return {
+                color:"black"
+                fillOpacity: 0.3
+            };
+        }
     },
     onEachFeature: function (feature, layer) {
         //console.log("Feature: ", feature);
