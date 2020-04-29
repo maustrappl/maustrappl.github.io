@@ -72,13 +72,13 @@ L.geoJson.ajax(wandern, {
             return {
                 color: "black",
                 weight: 2,
-                dashArray: "15 5"
+                dashArray: "6 10"
             };
         } else {
             return {
                 color: "black",
                 weight: 2,
-                dashArray: "1 5"
+                dashArray: "1 8"
             };
         }
     },
