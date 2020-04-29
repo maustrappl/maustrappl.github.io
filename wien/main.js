@@ -11,9 +11,7 @@ let map = L.map("map", {
 let sightGroup = L.markerClusterGroup().addTo(map);
 let walkGroup = L.featureGroup().addTo(map);
 let heritageGroup = L.featureGroup().addTo(map);
-let overlay = {
-    stations: L.featureGroup()
-}
+
 
 L.control.layers({
     "BasemapAT.grau": startLayer,
@@ -73,20 +71,21 @@ L.geoJson.ajax(wandern, {
         if (feature.properties.TYP == "1") {
             return {
                 color: "black",
-                dashArray: "4,7",
-                weight: 3.5
+                weight: 2,
+                dashArray: "15 5"
             };
-        } else(feature.properties.TYP == "2")
-        return {
-            color: "black",
-            dashArray: "1,5",
-            fillOpacity: 0.3
-        };
-        // console.log("Feature: ", feature);
+        } else {
+            return {
+                color: "black",
+                weight: 2,
+                dashArray: "1 5"
+            };
+        }
+    },
+    onEachFeature: function (feature, layer) {
         layer.bindPopup(`<p>${feature.properties.BEZ_TEXT}</p>`);
     }
-
-}).add(walkGroup);
+}).addTo(walkGroup);
 
 // weltulturerbe
 
