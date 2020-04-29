@@ -1,8 +1,8 @@
 let startLayer = L.tileLayer.provider("BasemapAT.grau");
 
 let map = L.map("map", {
-    // center: [48.208333, 16.373056],
-    // zoom: 12,
+    center: [48.208333, 16.373056],
+    zoom: 12,
     layers: [
         startLayer
     ]
@@ -76,16 +76,16 @@ L.geoJson.ajax(wandern, {
                 dashArray: "4,7",
                 weight: 3.5
             };
-        } else  (feature.properties.TYP == "2")
-            return {
-                color: "black",
-                dashArray: "1,5",
-                fillOpacity: 0.3
-            };
-            // console.log("Feature: ", feature);
+        } else(feature.properties.TYP == "2")
+        return {
+            color: "black",
+            dashArray: "1,5",
+            fillOpacity: 0.3
+        };
+        // console.log("Feature: ", feature);
         layer.bindPopup(`<p>${feature.properties.BEZ_TEXT}</p>`);
     }
-    
+
 }).add(walkGroup);
 
 // weltulturerbe
@@ -101,9 +101,9 @@ L.geoJson.ajax(heritage, {
             };
         } else {
             return {
-                color:"yellow",
+                color: "yellow",
                 fillOpacity: 0.3
-                
+
             };
         }
     },
@@ -113,11 +113,4 @@ L.geoJson.ajax(heritage, {
         <p>${feature.properties.INFO}</p>
         `);
     }
-}).addTo(overlay.stations);
-
-aws.on("data:loaded",function () {
-console.log(aws.toGeoJSON());
-map.fitBounds(overlay.stations.getBounds());
-
-overlay.stations.addTo(map);
-}).addTo(heritageGroup); 
+}).addTo(heritageGroup);
