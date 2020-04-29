@@ -83,10 +83,10 @@ L.geoJson.ajax(wandern, {
                 fillOpacity: 0.3
             };
             // console.log("Feature: ", feature);
-        layer.bindPopup(`<h3>${feature.properties.BEZ_TEXT}</h3>`);
+        layer.bindPopup(`<p>${feature.properties.BEZ_TEXT}</p>`);
     }
     
-}).addTo(map);
+}).add(walkGroup);
 
 // weltulturerbe
 
