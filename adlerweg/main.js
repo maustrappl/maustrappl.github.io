@@ -7,6 +7,7 @@ let map = L.map("map", {
         startLayer
     ]
 });
+
 let overlay = {
     adlerblicke: L.featureGroup()
 };
@@ -23,18 +24,16 @@ L.control.layers({
         L.tileLayer.provider("BasemapAT.orthofoto"),
         L.tileLayer.provider("BasemapAT.overlay")
     ])
-
-},{
+}, {
     "Adlerblicke": overlay.adlerblicke
-
 }).addTo(map);
 
-console.log(blicke);
+//console.log(ETAPPEN);
+//console.log(ADLERBLICKE);
 
-for (const iterator of ADLERBLICKE) {
-    console.log(blick)
-    let mrh = L.marker([blick.lat, blick.lng]).addTo(map);
-    mrk.bindPopup(`Standort${blick.standort} (${blick.seehöhe}m)`);
+for (const blick of ADLERBLICKE) {
+    console.log(blick);
+    let mrk = L.marker([blick.lat,blick.lng]).addTo(overlay.adlerblicke);
+    mrk.bindPopup(`Standort ${blick.standort} (${blick.seehoehe}m)`);
 }
-
 overlay.adlerblicke.addTo(map);
