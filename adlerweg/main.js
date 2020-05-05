@@ -27,7 +27,8 @@ L.control.layers({
     ])
 }, {
     "Adlerblicke": overlay.adlerblicke,
-    "Adlerweg Etappen": overlay.etappen
+    "Adlerweg Etappen": overlay.etappen,
+    // "Adlerweg Einkehrmöglichkeiten": overlay.einkehr
 }).addTo(map);
 
 //console.log(ETAPPEN);
