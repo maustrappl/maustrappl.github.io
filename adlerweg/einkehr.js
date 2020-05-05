@@ -21,7 +21,7 @@ const EINKEHR = [
   
   
   
-    [ Etappennummer (13),Patscherkofelhaus, Lat, Lng ],
+    [ Etappennummer (13),Patscherkofelhaus, 47.21052, 11.45230 ],
     [ Etappennummer (13), Boschebenalm, 47.21173,11.47659 ],
     [ Etappennummer (13), Tulfeinalm, 47.22310, 11.52766],
    
