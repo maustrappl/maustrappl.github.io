@@ -1,4 +1,4 @@
-const ebike = {
+const Ebike = {
     "displayFieldName": "",
     "fieldAliases": {
         "FID": "FID",
@@ -509,23 +509,6 @@ const ebike = {
             "FID": 1,
             "OBJECTID_1": 1608,
             "NAME_DE": "Bike Nussdorfer Brücke - Lienzer Hütte",
-            "URL_INTERN": " ",
-            "TYP": "eBike",
-            "SO_WI": "Sommer",
-            "LENGTH": 0,
-            "RICHTUNG_O": 0,
-            "BESCHREIBU": " ",
-            "KATEGORIE": " ",
-            "BILDER": " ",
-            "JAHRESZEIT": " ",
-            "AUSGANGSPU": " ",
-            "ZIELPUNKT": " ",
-            "SCHWIERIGK": " ",
-            "RUNDWEG": 0,
-            "KONTAKT": " ",
-            "URLINFO": " ",
-            "GSKEY": "NP_1608",
-            "GEHZEIT": 0,
             "SHAPE_LEN": 5754.1314462099999
         },
         "geometry": {
@@ -6682,4 +6665,4 @@ const ebike = {
             ]
         }
     }]
-};
+}
